@@ -33,7 +33,7 @@ def get_info(url) -> Dict[str, str]:
     """
     log.info('Grabbing required informations in %s' % url)
     log.debug('Establishing connection to Zippyshare.')
-    r = Net.requests.get(url)
+    r = Net.requests.get(url, verify=False)
     try:
         r.raise_for_status()
     except requests.HTTPError as e:
